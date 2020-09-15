@@ -1,0 +1,12 @@
+action: bugsRequested
+reducer: loading = true
+middleware: dispatch new action 
+
+Saving Data to the Server:
+Make an API call.
+Promise resolved => dispatch(success)
+Promise rejected => dispatch(error)
+
+Save the data when:
+ - Assigning a bug to a user
+ - Resolving a bug

@@ -1,28 +1,15 @@
-import configureStore from './store/configureStore'
-import {
-  bugAdded,
-  bugResolved,
-  bugAssignedToUser,
-  getUnresolvedBugs,
-} from './store/bugs'
-import { projectAdded } from './store/projects'
-import { userAdded } from './store/users'
+import { bugAdded } from './store/bugs'
+bugAdded()
 
-const store = configureStore()
+// import { turnOn } from './store/module'
+// turnOn()
 
-store.subscribe(() => {
-  console.log('Store changed!')
-})
+// import configureStore from './store/configureStore'
+// import { loadBugs, assignBugToUser } from './store/bugs'
 
-store.dispatch(userAdded({ name: 'User 1' }))
-// store.dispatch(userAdded({ name: 'User 2' }))
-// store.dispatch(bugAdded({ description: 'Bug 1' }))
-// store.dispatch(bugAdded({ description: 'Bug 2' }))
-// store.dispatch(bugAdded({ description: 'Bug 3' }))
-// store.dispatch(bugAssignedToUser({ bugId: 1, userId: 1 }))
-// store.dispatch(bugResolved({ id: 1 }))
+// const store = configureStore()
 
-const x = getUnresolvedBugs(store.getState())
-const y = getUnresolvedBugs(store.getState())
+// // UI Layer
+// store.dispatch(loadBugs())
 
-console.log(x === y)
+// setTimeout(() => store.dispatch(assignBugToUser(1, 4)), 2000)
